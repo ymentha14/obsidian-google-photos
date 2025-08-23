@@ -1,6 +1,6 @@
 {
-	"id": "google-photos",
-	"name": "Google Photos",
+	"id": "google-photos-mty1",
+  "name": "Google Photos mty1",
 	"version": "2.0.0",
 	"minAppVersion": "0.15.0",
 	"description": "Embed Google Photos images using the new Picker API (Legacy Library API features removed)",

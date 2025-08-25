@@ -9,7 +9,7 @@ export class ThumbnailImage extends Image {
   productUrl: string
   filename: string
   description?: string
-  creationTime: Moment
+  createTime: Moment
 }
 
 export default class Renderer {
@@ -80,8 +80,8 @@ export class GridView extends Renderer {
         img.baseUrl = mediaItem.baseUrl
         img.productUrl = mediaItem.productUrl
         img.description = mediaItem.description // Optional caption
-        img.creationTime = moment(mediaItem.mediaMetadata.creationTime)
-        img.filename = img.creationTime.format(settings.filename)
+        img.createTime = moment(mediaItem.mediaMetadata.createTime)
+        img.filename = img.createTime.format(settings.filename)
         img.onclick = onclick
         img.classList.add('google-photos-grid-thumbnail')
         

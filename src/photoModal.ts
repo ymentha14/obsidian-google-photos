@@ -80,11 +80,13 @@ export class PhotosModal extends Modal {
 			})
 			await this.view.app.vault.adapter.writeBinary(thumbnailFolder + '/' + (thumbnailImage.filename || (thumbnailImage.photoId ? `${thumbnailImage.photoId}.jpg` : 'image.jpg')), imageData.arrayBuffer)
 			const cursorPosition = this.editor.getCursor()
-			// Normalize creationTime to a moment instance if needed
-			let creationMoment: any = thumbnailImage.creationTime
+			// Normalize createTime to a moment instance if needed
+            console.log("Thumbnail Image:", thumbnailImage);
+			let creationMoment: any = thumbnailImage.mediaMetadata.createTime
 			if (creationMoment && typeof creationMoment.format !== 'function') {
 				creationMoment = moment(creationMoment)
 			} else if (!creationMoment) {
+                console.log("No creation time available, using current time.");
 				creationMoment = moment()
 			}
 			const linkText = handlebarParse(this.plugin.settings.thumbnailMarkdown, {

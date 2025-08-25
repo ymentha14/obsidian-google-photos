@@ -8,7 +8,7 @@ export type GooglePhotosMediaItem = {
   baseUrl: string,
   mimeType: string,
   mediaMetadata: {
-    creationTime: string
+    createTime: string
   },
   filename: string
 }
@@ -33,7 +33,7 @@ export type PickedMediaItem = {
   },
   description?: string,
   mediaMetadata?: {
-    creationTime: string
+    createTime: string
   }
 }
 
@@ -177,7 +177,7 @@ export default class PhotosApi {
       baseUrl: baseUrl,
       mimeType: mimeType,
       mediaMetadata: {
-        creationTime: pickedItem.mediaMetadata?.creationTime || moment().toISOString()
+        createTime: pickedItem.createTime || moment().toISOString()
       },
       filename: filename
     }
